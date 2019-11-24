@@ -50,7 +50,7 @@ def login_route():
     username = request.json["username"]
     password = request.json["password"]
     for i in users:
-        if i["username"] == username and i["password"]:
+        if i["username"] == username and i["password"] == password:
             return json.dumps({"success":i})
     
     return json.dumps({"success":"Wrong Username/Password"})
