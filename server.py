@@ -44,7 +44,7 @@ def write_file():
         writer.writerow({"id":id,"username":username,"password":password})
     return json.dumps({"success":"success"+username,"username":username})
 
-@app.route("/login",methods = ["POST"])                                            
+@app.route("/login",methods = ["POST"])                             # Login using the Users global List                            
 def login_route():
     read_user()
     username = request.json["username"]
